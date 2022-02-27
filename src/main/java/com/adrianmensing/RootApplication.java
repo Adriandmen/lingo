@@ -1,7 +1,8 @@
 package com.adrianmensing;
 
-import com.adrianmensing.domain.AuthToken;
 import com.adrianmensing.domain.AuthTokenRepository;
+import com.adrianmensing.domain.User;
+import com.adrianmensing.domain.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,12 +20,15 @@ public class RootApplication {
     }
 
     @Bean
-    public CommandLineRunner demo(AuthTokenRepository repository) {
+    public CommandLineRunner demo(UserRepository userRepository, AuthTokenRepository authTokenRepository) {
         return (args) -> {
-            repository.save(new AuthToken("abcdefg"));
-            repository.save(new AuthToken("joqweqjwe"));
+            logger.info("User count: " + userRepository.count());
 
-            logger.info("Count: " + repository.count());
+            User user = new User();
+
+            userRepository.save(user);
+
+            logger.info("Count: " + authTokenRepository.count());
         };
     }
 }

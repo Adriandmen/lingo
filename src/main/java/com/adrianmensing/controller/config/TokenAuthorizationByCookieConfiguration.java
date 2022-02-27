@@ -10,11 +10,12 @@ import javax.annotation.Resource;
 public class TokenAuthorizationByCookieConfiguration implements WebMvcConfigurer {
 
     @Resource
-    private AuthCookieInterceptor authCookieInterceptor;
+    private UserAuthorizationTokenInterceptor userAuthorizationTokenInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authCookieInterceptor)
-                .addPathPatterns("/**");
+        registry.addInterceptor(userAuthorizationTokenInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/api/**");
     }
 }

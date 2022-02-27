@@ -23,14 +23,7 @@ public class AuthTokenService {
         this.logger = Logger.getLogger(getClass().getName());
     }
 
-    public Cookie validateOrCreateNewAuthCookie(@NonNull Cookie cookie) {
-        boolean cookieIsValid = authTokenUserMap.containsKey(cookie.getValue());
-        if (cookieIsValid)
-            return cookie;
-
-        return newAuthCookie();
-    }
-
+    @Deprecated
     public Cookie newAuthCookie() {
         KeyTokenPairImpl pair = KeyTokenPairImpl.newKeyTokenPair(userId.getAndIncrement());
         authTokenUserMap.put(pair.secretToken, pair.id);

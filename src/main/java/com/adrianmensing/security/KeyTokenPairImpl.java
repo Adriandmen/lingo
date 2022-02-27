@@ -7,6 +7,7 @@ import com.adrianmensing.domain.AuthToken;
  *
  * <p>no idea what the fuck spring-boot is on about.</p>
  */
+@Deprecated
 class KeyTokenPairImpl {
     private static final int TOKEN_LENGTH = 64;
 
