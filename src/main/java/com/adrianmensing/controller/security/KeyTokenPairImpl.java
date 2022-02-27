@@ -1,6 +1,6 @@
-package com.adrianmensing.security;
+package com.adrianmensing.controller.security;
 
-import com.adrianmensing.domain.AuthToken;
+import com.adrianmensing.domain.entity.AuthToken;
 
 /**
  * A simple way of managing user tokens.

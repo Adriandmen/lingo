@@ -1,6 +1,6 @@
 package com.adrianmensing.lingo.game.guess.letter;
 
-import com.adrianmensing.console.Color;
+import com.adrianmensing.lingo.console.Color;
 
 public enum ResultType {
     CORRECT(Color.GREEN_BOLD),

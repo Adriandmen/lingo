@@ -1,4 +1,4 @@
-package com.adrianmensing.console;
+package com.adrianmensing.lingo.console;
 
 public enum Color {
     RESET("\u001B[0m"),

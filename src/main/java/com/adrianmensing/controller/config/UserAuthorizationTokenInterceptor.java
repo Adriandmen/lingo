@@ -1,8 +1,8 @@
 package com.adrianmensing.controller.config;
 
-import com.adrianmensing.domain.User;
-import com.adrianmensing.domain.UserRepository;
-import com.adrianmensing.security.AuthTokenService;
+import com.adrianmensing.domain.entity.User;
+import com.adrianmensing.domain.repository.UserRepository;
+import com.adrianmensing.controller.security.AuthTokenService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
 
-import static com.adrianmensing.security.AuthTokenService.AUTH_TOKEN_NAME;
+import static com.adrianmensing.controller.security.AuthTokenService.AUTH_TOKEN_NAME;
 
 @Component
 public class UserAuthorizationTokenInterceptor implements HandlerInterceptor {

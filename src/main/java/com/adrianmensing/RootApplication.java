@@ -1,8 +1,8 @@
 package com.adrianmensing;
 
-import com.adrianmensing.domain.AuthTokenRepository;
-import com.adrianmensing.domain.User;
-import com.adrianmensing.domain.UserRepository;
+import com.adrianmensing.domain.repository.AuthTokenRepository;
+import com.adrianmensing.domain.entity.User;
+import com.adrianmensing.domain.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

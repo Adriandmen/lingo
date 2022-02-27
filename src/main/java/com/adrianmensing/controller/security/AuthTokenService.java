@@ -1,4 +1,4 @@
-package com.adrianmensing.security;
+package com.adrianmensing.controller.security;
 
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;

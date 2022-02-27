@@ -1,6 +1,6 @@
-package com.adrianmensing.domain;
+package com.adrianmensing.domain.entity;
 
-import com.adrianmensing.security.TokenGenerator;
+import com.adrianmensing.controller.security.TokenGenerator;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
@@ -15,14 +15,21 @@ public class User {
     @Nullable
     private String username;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private AuthToken token;
 
     public User() {
         this(new AuthToken(TokenGenerator.generateToken(32)));
     }
 
-    public User(AuthToken token) {
+    /**
+     * Protected constructor for User instances.
+     *
+     * <p>Should not be used outside of this package's scope.</p>
+     *
+     * @param token The token associated with this user.
+     */
+    protected User(AuthToken token) {
         this.token = token;
     }
 

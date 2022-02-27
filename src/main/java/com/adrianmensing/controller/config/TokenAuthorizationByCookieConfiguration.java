@@ -15,7 +15,7 @@ public class TokenAuthorizationByCookieConfiguration implements WebMvcConfigurer
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(userAuthorizationTokenInterceptor)
-                .addPathPatterns("/**")
+                .addPathPatterns("/")
                 .excludePathPatterns("/api/**");
     }
 }

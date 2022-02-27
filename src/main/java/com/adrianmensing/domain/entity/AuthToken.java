@@ -1,4 +1,4 @@
-package com.adrianmensing.domain;
+package com.adrianmensing.domain.entity;
 
 import javax.persistence.*;
 import java.util.StringJoiner;
